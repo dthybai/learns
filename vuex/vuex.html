@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuex学习记录</title>
+</head>
+<style>
+.learn{
+    margin-top: 3%;
+    padding-left: 20%;
+}
+</style>
+<body>
+    <div class="learn">
+        <h3>vuex入门</h3>
+        <h4>vuex安装</h4>
+        <ul>
+            <ol>使用npm安装：npm install vuex --save</ol>
+            <ol>使用yarn安装：yarn add vuex</ol>
+        </ul>
+        <h4>vuex使用方法</h4>
+        <ul>
+            <ol>在src目录下创建一个store文件</ol>
+            <ol>在store文件夹中新建一个index.js</ol>
+            <ol>在index.js文件中引入vue和vuex（import Vue from 'vue'; and import Vuex from 'vuxe'）</ol>
+            <ol>创建vuex实例( const store = new Vuex.store({}))</ol>
+            <ol>导出vuex实例( export default store)</ol>
+            <ol>在main.js文件中引入该文件，在文件里面添加 import store from ‘./store’;，再在vue实例全局引入store对象；</ol>
+        </ul>
+        <h4>接下来就可以编写vuex业务代码</h4>
+        <ul>
+            <ol>
+                vuex中的数据源（state）
+                获取数据源使用（<this.$store.state.数据源></this.>）
+            </ol>
+            <ol>
+                vuex 4种方法（这些方法都要放在vuex实例中）
+                1.state 定义初始状态 state:{count:1}
+                2.getters 对值进行改变（类似于计算属性computed）
+                3.mutations 修改store中的值唯一的方法就是提交mutation来修改
+                4.actions 官方不建议我们直接修改store的值，所以需要通过提交actions，然后再通过mutation修改
+            </ol>
+        </ul>
+        <h4>为了不是用this.$store.state.count这种方式获取值，vuex提供了三种方法获取</h4>
+        <ul>
+            <ol>1.在vue文件中引入 import { mapState, mapMutation, mapAction, mapGetters} from 'vuex'</ol>
+            <ol>2.放在computed里执行 computed:{...mapState({
+                count1.state => state.count    
+            })}</ol>
+        </ul>
+    </div>
+</body>
+</html>
